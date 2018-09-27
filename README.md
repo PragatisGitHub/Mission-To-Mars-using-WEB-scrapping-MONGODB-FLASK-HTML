@@ -1,6 +1,3 @@
-# Mission-To-Mars-using-WEB-scrapping-MONGODB-FLASK-HTML
-Mission To Mars using WEB scrapping, MONGODB, FLASK &amp; HTML
-
 # Mission to Mars
 
 ![mission_to_mars](Images/mission_to_mars.jpg)
@@ -106,4 +103,3 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 ## Copyright
 
 Trilogy Education Services © 2017. All Rights Reserved.
-

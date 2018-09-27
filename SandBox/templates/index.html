@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NASA MARS DATA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center" style="background-color: orange;">
+            <h1 style="font-family: 'Times New Roman', Times, serif;"><strong>Mission to Mars</strong></h1>
+            <p style="font-family: 'Times New Roman', Times, serif;"><a class="btn btn-primary btn-lg" role="button" href="/scrape">Scrape New Data</a></p>
+        </div>
+        <div class="col-lg-12">
+            <h2><strong>Latest Mars News</strong></h2>
+            <a href="{{NASA_Mars_Data.News_url_link}}" target="_blank"><h4 style="color:#0074D9;"><strong>{{NASA_Mars_Data.News_Title}}</strong></h5></a>
+            <p style="font-size: 15px;">{{NASA_Mars_Data.News_Para}}</h5> 
+            <p style="font-size:12px;"><strong>Published On:</strong>{{NASA_Mars_Data.News_Published_Date}}</p>   
+        </div>
+        <div class="row">
+            <div class="col-lg-8 Fimgsize">
+                <h2><strong>Featured Mars Image</strong></h2>
+                <a href="{{ NASA_Mars_Data.Featured_Image_Url }}" target="_blank">
+                    <img src="{{ NASA_Mars_Data.Featured_Image_Url }}" style="width:900px;height:600px;">
+                </a> 
+                <p style="font-size: 15px;"><strong>{{NASA_Mars_Data.Featured_Image_Title}}</strong></p>   
+            </div>
+            <div class="col-lg-4">
+                <h2 style="text-align: left"><strong>Current Weather on Mars</strong></h2>   
+                <p class="border">{{NASA_Mars_Data.Weather}}</p>
+                <div class="row">
+                    <h2 style="text-align: left"><strong>Mars Facts</strong></h2>
+                    <div style="padding:20px;">  
+                        {{NASA_Mars_Data.Facts_Table | safe}}
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="container-fluid">
+            <div class="row">
+                <h2 style="text-align: center;"><strong>Mars Hemispheres</strong></h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[0]['title']}}</strong></h3>
+                        <a href="{{NASA_Mars_Data.Mars_Hemispheres[0]['img_url']}}">
+                            <img src = "{{NASA_Mars_Data.Mars_Hemispheres[0]['img_url']}}" style="width:500px; height: 500px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
+                        </a>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[1]['title']}}</strong></h3>
+                        <a href="{{NASA_Mars_Data.Mars_Hemispheres[1]['img_url']}}">
+                            <img src = "{{NASA_Mars_Data.Mars_Hemispheres[1]['img_url']}}" style="width:550px; height: 550px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
+                        </a>
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[2]['title']}}</strong></h3>
+                        <a href="{{NASA_Mars_Data.Mars_Hemispheres[2]['img_url']}}">
+                            <img src = "{{NASA_Mars_Data.Mars_Hemispheres[2]['img_url']}}" style="width:550px; height: 550px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
+                        </a>
+                        
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[3]['title']}}</strong></h3>
+                        <a href="{{NASA_Mars_Data.Mars_Hemispheres[3]['img_url']}}">
+                            <img src = "{{NASA_Mars_Data.Mars_Hemispheres[3]['img_url']}}" style="width:550px; height: 550px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <br>
+    <footer style="background-color: orange; color: black;">
+            <div class="container-fluid">
+                <p style="font-family: 'Times New Roman', Times, serif; text-align: center; padding-top: 20px">
+                     © 2018 Copyright: Pragati Soni Mehta
+                </p>
+            </div> 
+    </footer>
+</body>
+</html>

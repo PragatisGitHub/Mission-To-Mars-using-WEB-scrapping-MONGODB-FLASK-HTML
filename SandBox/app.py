@@ -15,10 +15,11 @@ mongo = PyMongo(app)
 def home():
 
     # Find data
-    Mars_Data_From_MongoDB = mongo.db.collection.find()
+    Mars_Data_From_MongoDB = mongo.db.mars.find_one()
 
     # Return template and data
     return render_template("index.html", NASA_Mars_Data=Mars_Data_From_MongoDB)
+    # return "Page Has loaded"
 
 
 # Route that will trigger scrape functions
@@ -28,14 +29,23 @@ def scrape():
     print(Mars_Data)
     print(Mars_Data['News_Title'])
     print(Mars_Data['News_Para'])
+    print(Mars_Data['Featured_Image_Url'])
+    print(Mars_Data['Weather'])  
+    print(Mars_Data['Facts_Table']) 
+    print(Mars_Data['Mars_Hemispheres'])    
 
-    Mars_Dict ={
-        'News_Title' : Mars_Data['News_Title'] ,
-        'News_Para' : Mars_Data['News_Para']    
-    }
+    # Mars_Dict ={
+    #     'News_Title'      : Mars_Data['News_Title'] ,
+    #     'News_Para'       : Mars_Data['News_Para'],
+    #     'Featured_Image'  : Mars_Data['Featured_Image_Url'],
+    #     'Weather'         : Mars_Data['Weather'],
+    #     'Facts Table'     : Mars_Data['Facts Table'],
+    #     'Mars_Hemispheres': Mars_Data['Mars_Hemispheres']                    
+    # }
     
-    mongo.db.collection.drop()
-    mongo.db.collection.insert_one(Mars_Dict)
+    # mongo.db.mars.drop()
+    # mongo.db.mars.insert_one(Mars_Dict)
+    mongo.db.mars.update({}, Mars_Data, upsert=True)
 
     # Redirect back to home page
     return redirect("/", code=302)

@@ -1,0 +1,22 @@
+body{
+    font-family: "Times New Roman", Times, serif;
+}
+
+p.border{
+    border-style: solid;
+    border-width: 1px;
+    border-color:grey;
+    padding: 20px;
+}
+
+h1.Bkimg{
+    background-image: url("Images/mission_to_mars.jpg");
+}
+.Fimgsize{
+    height: 100;
+    width: 100;
+}
+
+img{
+    width: 100%;
+}
