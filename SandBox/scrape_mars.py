@@ -41,9 +41,6 @@ def scrape():
     # Using the html attribute to get the html content of the visited page
     html = browser.html
     
-    # Quitting the browser 
-    browser.quit()
-    
     # Create a soup object to find the latest news from the URL
     MarsNewsData = BeautifulSoup(html, "html.parser")
 
@@ -63,9 +60,6 @@ def scrape():
     Mars_Data['News_url_link'] = "https://mars.nasa.gov" + news_url_link
 
 ### JPL Mars Space Images - Featured Image
-   
-    # Initialize browser
-    browser = init_browser()
 
     # Visit jpl NASA site for the featured image
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -76,9 +70,6 @@ def scrape():
     
     # Using the html attribute to get the html content of the visited page
     html = browser.html
-    
-    # Quitting the browser 
-    browser.quit()
 
     # Create a soup object to find the featured image from the URL
     MarsImageData = BeautifulSoup(html,"html.parser")
@@ -118,9 +109,6 @@ def scrape():
     
 ### Mars Facts
     
-    # Initialize browser
-    browser = init_browser()
-    
     # Visit space facts site for the Mars facts
     url = 'http://space-facts.com/mars/'
 
@@ -130,10 +118,7 @@ def scrape():
     
     # Using the html attribute to get the html content of the visited page
     html = browser.html
-
-    # Quitting the browser 
-    browser.quit()
-    
+   
     # Create a soup object to find the Mars facts from the URL
     MarsFactsData = BeautifulSoup(html,"html.parser")
 
@@ -152,9 +137,6 @@ def scrape():
     Mars_Data['Facts_Table'] = marsfactshtml
     
 ### Mars Hemispheres
-    
-    # Initialize browser
-    browser = init_browser()
     
     # Visit the US govt.'s astrology site for the Mars hemispheres
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'

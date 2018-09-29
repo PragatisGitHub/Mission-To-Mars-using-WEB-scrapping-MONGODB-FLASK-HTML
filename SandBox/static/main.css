@@ -9,14 +9,6 @@ p.border{
     padding: 20px;
 }
 
-h1.Bkimg{
-    background-image: url("Images/mission_to_mars.jpg");
-}
-.Fimgsize{
-    height: 100;
-    width: 100;
-}
-
 img{
     width: 100%;
 }

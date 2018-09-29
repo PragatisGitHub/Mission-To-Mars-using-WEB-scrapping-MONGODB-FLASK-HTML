@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="static/main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- <script src="main.js"></script> -->
 </head>
 <body>
     <div class="container-fluid">
@@ -30,33 +29,33 @@
                 <p style="font-size: 15px;"><strong>{{NASA_Mars_Data.Featured_Image_Title}}</strong></p>   
             </div>
             <div class="col-lg-4">
-                <h2 style="text-align: left"><strong>Current Weather on Mars</strong></h2>   
-                <p class="border">{{NASA_Mars_Data.Weather}}</p>
+                <div class="row">
+                    <h2 style="text-align: left"><strong>Current Weather on Mars</strong></h2>
+                    <p class="border">{{NASA_Mars_Data.Weather}}</p>
+                </div>   
                 <div class="row">
                     <h2 style="text-align: left"><strong>Mars Facts</strong></h2>
-                    <div style="padding:20px;">  
+                    <div>  
                         {{NASA_Mars_Data.Facts_Table | safe}}
                     </div>
                 </div>
             </div>
         </div>  
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container">
+            <div class="row" style="align-content:center;">
                 <h2 style="text-align: center;"><strong>Mars Hemispheres</strong></h2>
                 <div class="row">
                     <div class="col-lg-6">
                         <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[0]['title']}}</strong></h3>
                         <a href="{{NASA_Mars_Data.Mars_Hemispheres[0]['img_url']}}">
-                            <img src = "{{NASA_Mars_Data.Mars_Hemispheres[0]['img_url']}}" style="width:500px; height: 500px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
+                            <img src = "{{NASA_Mars_Data.Mars_Hemispheres[0]['img_url']}}" style="width:550px; height: 550px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
                         </a>
-
                     </div>
                     <div class="col-lg-6">
                         <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[1]['title']}}</strong></h3>
                         <a href="{{NASA_Mars_Data.Mars_Hemispheres[1]['img_url']}}">
                             <img src = "{{NASA_Mars_Data.Mars_Hemispheres[1]['img_url']}}" style="width:550px; height: 550px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
                         </a>
-
                     </div>
                 </div>
                 <br>
@@ -65,15 +64,13 @@
                         <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[2]['title']}}</strong></h3>
                         <a href="{{NASA_Mars_Data.Mars_Hemispheres[2]['img_url']}}">
                             <img src = "{{NASA_Mars_Data.Mars_Hemispheres[2]['img_url']}}" style="width:550px; height: 550px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
-                        </a>
-                        
+                        </a>                       
                     </div>
                     <div class="col-lg-6">
                         <h3 style="font-size: 15px;"><strong>{{NASA_Mars_Data.Mars_Hemispheres[3]['title']}}</strong></h3>
                         <a href="{{NASA_Mars_Data.Mars_Hemispheres[3]['img_url']}}">
                             <img src = "{{NASA_Mars_Data.Mars_Hemispheres[3]['img_url']}}" style="width:550px; height: 550px; padding:30px; border:1.5px; border-style: solid; border-color: gray">
                         </a>
-
                     </div>
                 </div>
             </div>
